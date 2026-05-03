@@ -3,6 +3,46 @@ import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
+iziToast.settings({
+  maxWidth: 300,
+  timeout: 4000,
+  position: 'topRight',
+  transitionIn: 'fadeInDown',
+  transitionOut: 'fadeOutUp',
+  close: true,
+  closeOnEscape: true,
+});
+
+function showSuccess(message) {
+  iziToast.show({
+    title: 'OK',
+    message,
+    color: 'green',
+    icon: 'ico-success',
+    iconColor: '#fff',
+  });
+}
+
+function showInfo(message) {
+  iziToast.show({
+    title: 'Info',
+    message,
+    color: 'blue',
+    icon: 'ico-info',
+    iconColor: '#fff',
+  });
+}
+
+function showError(message) {
+  iziToast.show({
+    title: 'Error',
+    message,
+    color: 'red',
+    icon: 'ico-error',
+    iconColor: '#fff',
+  });
+}
+
 const input = document.querySelector('#datetime-picker');
 const startBtn = document.querySelector('[data-start]');
 
@@ -46,19 +86,22 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  onClose(selectedDates) {
-    const date = selectedDates[0];
 
-    if (date <= new Date()) {
-      iziToast.error({
-        message: 'Please choose a date in the future',
-      });
+  onClose(selectedDates) {
+    const selectedDate = selectedDates[0];
+    const now = new Date();
+
+    if (selectedDate <= now) {
+      showError('Please choose a date in the future');
       startBtn.disabled = true;
+      userSelectedDate = null;
       return;
     }
 
-    userSelectedDate = date;
+    userSelectedDate = selectedDate;
     startBtn.disabled = false;
+
+    showSuccess('Date selected successfully');
   },
 };
 
@@ -79,6 +122,7 @@ startBtn.addEventListener('click', () => {
       updateUI({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       input.disabled = false;
       input.classList.remove('active');
+      showSuccess('Time is over');
       return;
     }
 
