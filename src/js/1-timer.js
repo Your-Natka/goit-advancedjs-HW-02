@@ -23,16 +23,6 @@ function showSuccess(message) {
   });
 }
 
-function showInfo(message) {
-  iziToast.show({
-    title: 'Info',
-    message,
-    color: 'blue',
-    icon: 'ico-info',
-    iconColor: '#fff',
-  });
-}
-
 function showError(message) {
   iziToast.show({
     title: 'Error',
