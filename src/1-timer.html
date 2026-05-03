@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
   <title>Timer</title>
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
@@ -19,34 +20,37 @@
         </a>
         <a class="back-link" href="./index.html">Back</a>
       </nav>
-      <section>
-        <h2>Timer</h2>
+      <section class="section-timer">
+        <div class="timer-form">
+          <div class="timer-container container">
+            <h2 class="visually-hidden">Timer</h2>
+            <input class="timer-picker" type="text" id="datetime-picker" />
+            <button class="start-btn" type="button" data-start>Start</button>
+          </div>
 
-        <input type="text" id="datetime-picker" />
-        <button type="button" data-start>Start</button>
-
-        <div class="timer">
-          <div class="field">
-            <span class="value" data-days>00</span>
-            <span class="label">Days</span>
-          </div>
-          <div class="field">
-            <span class="value" data-hours>00</span>
-            <span class="label">Hours</span>
-          </div>
-          <div class="field">
-            <span class="value" data-minutes>00</span>
-            <span class="label">Minutes</span>
-          </div>
-          <div class="field">
-            <span class="value" data-seconds>00</span>
-            <span class="label">Seconds</span>
+          <div class="timer container">
+            <div class="field">
+              <span class="value" data-days>00</span>
+              <span class="labell">Days</span>
+            </div>
+            <div class="field">
+              <span class="value" data-hours>00</span>
+              <span class="labell">Hours</span>
+            </div>
+            <div class="field">
+              <span class="value" data-minutes>00</span>
+              <span class="labell">Minutes</span>
+            </div>
+            <div class="field">
+              <span class="value" data-seconds>00</span>
+              <span class="labell">Seconds</span>
+            </div>
           </div>
         </div>
       </section>
     </div>
   </main>
-  <script type="module" src="./js/timer.js"></script>
+  <script type="module" src="./js/1-timer.js"></script>
 </body>
 
 </html>

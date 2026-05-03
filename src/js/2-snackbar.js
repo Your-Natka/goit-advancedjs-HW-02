@@ -9,7 +9,28 @@ form.addEventListener('submit', e => {
   const delay = Number(form.elements.delay.value);
   const state = form.elements.state.value;
 
-  const promise = new Promise((resolve, reject) => {
+  // 🔥 ВАЛІДАЦІЯ ПЕРЕД ПРОМІСОМ
+  if (delay < 0) {
+    iziToast.error({
+      message: 'Delay cannot be negative',
+    });
+    return;
+  }
+
+  if (delay === 0) {
+    iziToast.success({
+      message: 'Hello 👋',
+    });
+  }
+
+  if (delay > 0 && delay < 1000) {
+    iziToast.info({
+      message: 'Welcome 🙂',
+    });
+  }
+
+  // ✅ СТВОРЕННЯ ПРОМІСУ
+  new Promise((resolve, reject) => {
     setTimeout(() => {
       if (state === 'fulfilled') {
         resolve(delay);
@@ -17,9 +38,7 @@ form.addEventListener('submit', e => {
         reject(delay);
       }
     }, delay);
-  });
-
-  promise
+  })
     .then(delay => {
       console.log(`✅ Fulfilled promise in ${delay}ms`);
       iziToast.success({

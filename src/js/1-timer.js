@@ -1,6 +1,3 @@
-<a class="back-link" href="./index.html">
-  Go back
-</a>;
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
@@ -71,6 +68,8 @@ startBtn.addEventListener('click', () => {
   startBtn.disabled = true;
   input.disabled = true;
 
+  input.classList.add('active');
+
   timerId = setInterval(() => {
     const now = new Date();
     const diff = userSelectedDate - now;
@@ -79,6 +78,7 @@ startBtn.addEventListener('click', () => {
       clearInterval(timerId);
       updateUI({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       input.disabled = false;
+      input.classList.remove('active');
       return;
     }
 

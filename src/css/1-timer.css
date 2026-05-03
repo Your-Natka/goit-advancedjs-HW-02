@@ -1,0 +1,119 @@
+.section-timer {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.timer-form {
+  background-color: #fff;
+  padding: 20px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.timer-picker {
+  font-family: 'Montserrat', sans-serif;
+  width: 272px;
+  height: 40px;
+  padding: 8px 16px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-align: left;
+  padding: 8px 16px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #808080;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.timer-picker:hover {
+  border-color: #000000;
+}
+
+.timer-picker:active {
+  background-color: #f5f5f5;
+}
+
+.timer-picker:focus {
+  border-color: #4e75ff;
+}
+
+.timer-picker:disabled {
+  background-color: #fafafa;
+}
+
+.start-btn {
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 8px;
+  margin-left: 8px;
+  width: 75px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  font-size: large;
+  font-weight: 500;
+  border: none;
+  background-color: #cfcfcf;
+  color: #413b3b;
+  transition: background-color 250ms ease;
+}
+
+.start-btn:hover,
+.start-btn:focus {
+  background-color: #4e75ff;
+  color: #fff;
+}
+.start-btn:disabled {
+  background-color: #d5d3d3;
+  color: #8a8a8a;
+}
+
+.timer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 38px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 72px;
+}
+
+.value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.labell {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+
+  font-size: 16px;
+  font-weight: 400;
+}

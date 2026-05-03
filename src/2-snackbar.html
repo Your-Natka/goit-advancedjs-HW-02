@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
   <title>Snackbar</title>
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
@@ -21,35 +22,35 @@
         </a>
         <a class="back-link" href="./index.html">Back</a>
       </nav>
-      <section>
-        <h2>Promise Generator</h2>
+      <section class="section-snackbar">
+        <h2 class="visually-hidden">Promise Generator</h2>
 
-        <form class="form">
-          <label>
+        <form class="form container">
+          <label class="label">
             Delay (ms)
-            <input type="number" name="delay" required />
+            <input class="input" type="number" name="delay" required />
           </label>
 
-          <fieldset>
+          <fieldset class="fieldset">
             <legend>State</legend>
 
-            <label>
-              <input type="radio" name="state" value="fulfilled" required />
+            <label class="label-radio">
+              <input class="radio" type="radio" name="state" value="fulfilled" required />
               Fulfilled
             </label>
 
-            <label>
-              <input type="radio" name="state" value="rejected" required />
+            <label class="label-radio">
+              <input class="radio" type="radio" name="state" value="rejected" required />
               Rejected
             </label>
           </fieldset>
 
-          <button type="submit">Create notification</button>
+          <button class="button" type="submit">Create notification</button>
         </form>
       </section>
     </div>
   </main>
-  <script type="module" src="./js/snackbar.js"></script>
+  <script type="module" src="./js/2-snackbar.js"></script>
 
 </body>
 
